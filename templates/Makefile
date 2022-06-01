@@ -1,6 +1,7 @@
 SHELL := /bin/bash
 
--include Makefile.base
+-include django/Makefile.base
+
 
 BRANCH ?= master
 LANGUAGE ?= python
