@@ -2,7 +2,7 @@
 
 
 ```
-git clone git@github.com:Filip-231/Boilerplate
+git clone git@github.com:Filip-231/Boilerplate && cd Boilerplate/
 git filter-branch --index-filter 'git rm --ignore-unmatch --cached -qr -- . && git reset -q $GIT_COMMIT -- rest/ . ' --prune-empty -- --all
 git remote rm origin
 mkdir ~/Desktop/New-project
