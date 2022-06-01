@@ -11,7 +11,7 @@ BOILERPLATE_REPO_SSH = git@$(DOMAIN):$(BOILERPLATE_REPO_PATH)
 
 _VENV=.venv
 _VENV_ACTIVATE = $(_VENV)/bin/activate
-
+_CURRENT_DIR_NAME = $(shell basename $${PWD})
 #.PHONY: update
 #update::
 #	@echo "Updating Makefiles"
@@ -25,6 +25,25 @@ _VENV_ACTIVATE = $(_VENV)/bin/activate
 .PHONY: test
 test::
 	@echo "Updating Makefiles"
+	@echo $(shell basename $${PWD})
+
+
+.PHONY: init
+init: pre-install venv
+	$(info Initialising directory from template...)
+	$(info This will overwrite the contents of your current working directory. Are you sure you wish to continue? [y/n])
+	@read response; \
+	if [ $${response} = "y" ]; then \
+	echo "Initialising..."; \
+	find . -depth -path "./.git*" -prune -o \( \! -path "./Makefile*" \) \( \! -name "./.env" \) \
+		\( \! -path "./.venv*" \) -exec rm -rf {} \; 2> /dev/null; \
+	else \
+	echo "Aborting..."; \
+	exit 1; \
+	fi
+	. $(_VENV_ACTIVATE) && \
+		cruft create --output-dir=.. --directory=templates/python --overwrite-if-exists --checkout=$(BRANCH) \
+			--extra-context="{\"project_name\": \"$(_CURRENT_DIR_NAME)\"}" $(BOILERPLATE_REPO_PATH)
 
 
 .PHONY: pre-install
