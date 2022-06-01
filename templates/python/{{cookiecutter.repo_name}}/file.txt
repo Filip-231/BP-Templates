@@ -1,0 +1,2 @@
+Name: {{cookiecutter.full_name}}
+Config: {{cookiecutter.config}}

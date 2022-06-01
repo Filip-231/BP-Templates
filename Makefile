@@ -42,7 +42,7 @@ init: pre-install venv
 	exit 1; \
 	fi
 	. $(_VENV_ACTIVATE) && \
-		cruft create --output-dir=.. --directory=templates/python --overwrite-if-exists --checkout=$(BRANCH) \
+		cruft create --output-dir=.. --directory=templates/django --overwrite-if-exists --checkout=$(BRANCH) \
 			--extra-context="{\"project_name\": \"$(_CURRENT_DIR_NAME)\"}" $(BOILERPLATE_REPO_PATH)
 
 
