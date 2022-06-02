@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
--include django/Makefile.base
+-include Makefile.base
 
 
 BRANCH ?= master
