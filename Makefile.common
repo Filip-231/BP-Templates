@@ -1,6 +1,5 @@
 SHELL := /bin/bash
 
--include Makefile.base
 
 BRANCH ?= master
 LANGUAGE ?= python
@@ -26,6 +25,17 @@ _CURRENT_DIR_NAME = $(shell basename $${PWD})
 test::
 	@echo "Updating Makefiles"
 	@echo $(shell basename $${PWD})
+
+
+.PHONY: init-update
+init-update: pre-install update venv
+	. $(_VENV_ACTIVATE) && \
+		cruft $(if $(CHECK),check --checkout=$(BRANCH),update --allow-untracked-files --checkout=$(BRANCH))
+
+.PHONY: update
+update::
+	@echo "Updating inherited Makefiles"
+
 
 
 .PHONY: init
@@ -65,7 +75,7 @@ venv: $(_VENV_ACTIVATE)
 
 
 $(_VENV_ACTIVATE):
-	python -m venv --clear "$(_VENV)" && \
+	python3 -m venv --clear "$(_VENV)" && \
 		. $@ && \
 		pip install --upgrade pip
 	touch $@
