@@ -3,7 +3,7 @@
 
 ```
 git clone git@github.com:Filip-231/Boilerplate && cd Boilerplate/
-git filter-branch --index-filter 'git rm --ignore-unmatch --cached -qr -- . && git reset -q $GIT_COMMIT -- rest/ . ' --prune-empty -- --all
+git filter-branch --index-filter 'git rm --ignore-unmatch --cached -qr -- . && git reset -q $GIT_COMMIT -- . ' --prune-empty -- --all
 git remote rm origin
 mkdir ~/Desktop/New-project
 mv * ~/Desktop/New-project
