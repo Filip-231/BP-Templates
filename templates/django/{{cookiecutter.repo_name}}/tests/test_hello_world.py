@@ -5,4 +5,4 @@ def test_hello_world():
     assert 1==1
 
 def test_error():
-    assert 1==1
+    assert 1!=1
