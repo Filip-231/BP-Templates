@@ -1,3 +1,5 @@
 .idea/
 notes.txt
 .venv/
+.mypy_cache/
+.pytest_cache/
