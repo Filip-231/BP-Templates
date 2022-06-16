@@ -17,11 +17,8 @@ from django.contrib import admin
 from django.urls import path#, include, url
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     #url(r'^$','{{cookiecutter.repo_name}}.views.home',name='home'),
     #url(r'^blog/',include('blog,urls')),
-    path('admin/', admin.site.urls),
-    # url(r'^blog/',include('blog,urls')),
-    path('admin/', admin.site.urls),
-    # url(r'^blog/',include('blog,urls')),
     path('admin/', admin.site.urls),
 ]
