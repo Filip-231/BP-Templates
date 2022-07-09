@@ -3,10 +3,3 @@ notes.txt
 .venv/
 .mypy_cache/
 .pytest_cache/
-.coverage
-.mypy_cache
-.pytest_cache
-*.egg-info
-build/
-dist/
-public/
