@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#  type: ignore
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
@@ -10,7 +11,7 @@ def main() -> None:
         "DJANGO_SETTINGS_MODULE", "{{cookiecutter.repo_name}}.settings"
     )
     try:
-        from django.core.management import (  # type: ignore[import]
+        from django.core.management import (
             execute_from_command_line,
         )
     except ImportError as exc:
