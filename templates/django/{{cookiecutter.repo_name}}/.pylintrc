@@ -1,6 +1,6 @@
 [MASTER]
 load-plugins=pylint_django
-django-settings-module="Dir structure".settings
+django-settings-module="structure".settings
 
 [FORMAT]
 max-line-length=120
