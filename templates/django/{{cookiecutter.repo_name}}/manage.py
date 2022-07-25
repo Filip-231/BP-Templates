@@ -8,7 +8,7 @@ import sys
 def main() -> None:
     """Run administrative tasks."""
     os.environ.setdefault(
-        "DJANGO_SETTINGS_MODULE", "{{cookiecutter.repo_name}}.settings"
+        "DJANGO_SETTINGS_MODULE", "{{cookiecutter.api_name}}.settings"
     )
     try:
         from django.core.management import (
