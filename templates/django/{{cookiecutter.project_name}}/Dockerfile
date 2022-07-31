@@ -8,7 +8,7 @@ RUN pip install -r /requirements.txt
 RUN apk del .tmp
 
 RUN mkdir /structure
-COPY ./structure /structure
+COPY . /structure
 WORKDIR /structure
 COPY scripts /scripts
 
