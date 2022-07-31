@@ -5,7 +5,7 @@ ignore-paths:
 max-line-length: 120
 member-warnings: false
 output-format: grouped
-strictness: low
+strictness: veryhigh
 test-warnings: true
 
 bandit:
