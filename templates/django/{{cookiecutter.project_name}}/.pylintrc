@@ -1,6 +1,6 @@
 [MASTER]
 load-plugins=pylint_django
-django-settings-module="structure".settings
+django-settings-module="django_api".settings
 
 [FORMAT]
 max-line-length=120
