@@ -1,0 +1,15 @@
+.idea/
+notes.txt
+.venv/
+__pycache__/
+public/
+.env
+.coverage
+.mypy_cache
+.pytest_cache
+*.egg-info
+build/
+dist/
+public/
+public/.*/
+../templates/django/{{cookiecutter.project_name}}/docs/generated/
