@@ -1,0 +1,7 @@
+"""Tests for django module."""
+
+import pytest  # pylint disable=unused-import
+
+
+def test_hello_world() -> None:
+    """Blank dummy test."""
