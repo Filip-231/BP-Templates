@@ -1,0 +1,9 @@
+SHELL := /bin/bash
+
+ .PHONY: build
+build:  ## builds docker image
+	echo "dummy build"
+
+ .PHONY: up
+up: ## ALLOWED_HOSTS= SECRET_KEY= turn up the django rest api
+	echo "dummy up"

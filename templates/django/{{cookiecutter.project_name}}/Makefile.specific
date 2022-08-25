@@ -1,0 +1,9 @@
+SHELL := /bin/bash
+
+ .PHONY: build
+build:  ## builds docker image
+	sudo docker-compose build
+
+ .PHONY: up
+up: ## ALLOWED_HOSTS= SECRET_KEY= turn up the django rest api
+	sudo ALLOWED_HOSTS=$(ALLOWED_HOSTS) SECRET_KEY=$(SECRET_KEY) docker-compose up -d
