@@ -18,8 +18,6 @@ argcomplete==1.12.3
     # via commitizen
 arrow==1.2.2
     # via jinja2-time
-asgiref==3.5.2
-    # via django
 astroid==2.11.7
     # via
     #   pylint
@@ -88,8 +86,6 @@ dill==0.3.5.1
     # via pylint
 distlib==0.3.5
     # via virtualenv
-django==4.1
-    # via UNKNOWN (setup.cfg)
 docutils==0.19
     # via
     #   pyroma
@@ -351,8 +347,6 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-sqlparse==0.4.2
-    # via django
 stevedore==4.0.0
     # via bandit
 termcolor==1.1.0
