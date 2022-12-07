@@ -117,3 +117,11 @@ clean:: ## clean up temp and local build files
 	. "$(_VENV_ACTIVATE)" && \
 		dbt clean && \
 		rm -rf dist
+
+
+.PHONY: clean2
+clean2:: ## clean up temp and local build files
+	echo "Cleaning environment."
+	. "$(_VENV_ACTIVATE)" && \
+		dbt clean && \
+		rm -rf dist
