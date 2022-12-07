@@ -40,7 +40,7 @@ models:
 
   prod:
     intermediate:
-#      +schema: INTERMEDIATE
+      +schema: INTERMEDIATE
     staging:
       +materialized: view
     marts:
