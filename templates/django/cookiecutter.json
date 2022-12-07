@@ -1,7 +1,7 @@
 {
   "_copy_without_render": ["docs/source/templates", ".github/workflows"],
-  "project_name": "Title of the project",
-  "repo_name": "structure",
+  "project_name": "BP-Django-",
+  "repo_name": "BP-Django-",
   "api_name": "django_api",
   "author_name": "Your Name",
   "email": "Your Email",
