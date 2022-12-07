@@ -1,0 +1,23 @@
+dev:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: credentials.json
+      project: sandbox
+      dataset: DBT_DEV
+      threads: 4
+      location: EU
+
+prod:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: credentials.json
+      project: sandbox
+      dataset: DBT_PROD
+      threads: 4
+      location: EU

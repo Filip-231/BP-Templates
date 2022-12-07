@@ -1,0 +1,66 @@
+config-version: 2
+profile: prod
+
+name: dev
+version: "1.0.0"
+
+analysis-paths:
+- analyses
+asset-paths:
+- assets
+macro-paths:
+- macros
+model-paths:
+- models
+seed-paths:
+- seeds
+snapshot-paths:
+- snapshots
+test-paths:
+- tests
+
+log-path: logs
+packages-install-path: dbt_packages
+target-path: target
+
+clean-targets:
+  - dbt_packages
+  - target
+
+quoting:
+  database: true
+  identifier: true
+  schema: true
+
+models:
+  +enabled: true
+  +persist_docs:
+    columns: true
+    relation: true
+
+  prod:
+    intermediate:
+#      +schema: INTERMEDIATE
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  +enabled: true
+
+sources:
+  +enabled: true
+
+tests:
+  +enabled: true
+  +store_failures: false
+
+vars:
+  default_string_value: DEFAULT
+  loaded_at_field: UpdatedAt
+  id_regex: ^.*\(ID_NUMBER:-(\d+)\).*$
+  tomorrow: DATE_ADD(CURRENT_DATE(), INTERVAL 1 DAY)
+  yesterday: DATE_ADD(CURRENT_DATE(), INTERVAL -1 DAY)
+  infinity_future: DATE("9999-12-31")
+  infinity_past: DATE("1970-01-01")
