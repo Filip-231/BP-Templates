@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application  # type: ignore[import]
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{cookiecutter.api_name}}.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_api.settings")
 
 application = get_asgi_application()
