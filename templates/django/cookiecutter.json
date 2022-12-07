@@ -1,7 +1,7 @@
 {
   "_copy_without_render": [
     "docs/source/templates",
-    ".github"
+    ".github/workflows"
   ],
   "project_name": "Title of the project",
   "repo_name": "structure",
