@@ -1,6 +1,7 @@
 {
   "_copy_without_render": [
-    "docs/source/templates"
+    "docs/source/templates",
+    ".github"
   ],
   "project_name": "Title of the project",
   "repo_name": "structure",

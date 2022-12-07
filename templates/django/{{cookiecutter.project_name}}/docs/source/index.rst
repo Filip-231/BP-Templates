@@ -13,5 +13,4 @@ Project
     :hidden:
     :caption: Development
 
-    GitHub Repository
-    Contributing
+    GitHub Repository <https://github.com/Filip-231/{{ cookiecutter.project_name }}>
