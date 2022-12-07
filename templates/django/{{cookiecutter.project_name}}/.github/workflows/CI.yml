@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Setup SSH Keys and known_hosts
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
@@ -36,7 +35,7 @@ jobs:
           EXTRAS: test
         run: make install
 
-      - name: Run check
+      - name: Test
         run: make test
   lint:
     name: Lint
@@ -57,7 +56,7 @@ jobs:
         EXTRAS: lint
       run: make install
 
-    - name: Run check
+    - name: Lint
       run: make lint
 
   format:
@@ -79,7 +78,7 @@ jobs:
           EXTRAS: format
         run: make install
 
-      - name: Run check
+      - name: Format
         run: make format
 
   compose:
@@ -100,10 +99,10 @@ jobs:
           DOCKER_BUILDKIT: 1
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_REPO }}
           SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY_TO_REPO }}
-        run: docker-compose build
+        run: Docker-compose build
 # TODO:   make build # make źle parsuje ssh key i nie da się go podstawić do komendy docker-compose mimo że jest w envie i nie trzeba go przekazywać do make
 
-      - name: docker-compose up
+      - name: Docker-compose up
         env:
           ALLOWED_HOSTS: ${{ secrets.TESTING_HOST_IP }}
           SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
@@ -114,13 +113,13 @@ jobs:
     needs: [test, lint, format]
     steps:
       - uses: actions/checkout@v2
-      - name: docker build
+      - name: Docker build
         env:
           ssh_prv_key: ${{ secrets.SSH_PRIVATE_KEY_TO_REPO }}
           ssh_pub_key: ${{ secrets.SSH_PUBLIC_KEY_TO_REPO }}
         run: docker build -t example --build-arg ssh_prv_key="${{ secrets.SSH_PRIVATE_KEY_TO_REPO }}" --build-arg ssh_pub_key="${{ secrets.SSH_PUBLIC_KEY_TO_REPO }}" .
 
-      - name: docker run
+      - name: Docker run
         env:
           ALLOWED_HOSTS: ${{ secrets.TESTING_HOST_IP }}
           SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
