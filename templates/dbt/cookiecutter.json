@@ -1,4 +1,5 @@
 {
+  "_copy_without_render": ["dags", ".github/workflows"],
   "repo_name": "BP-Test-Dbt",
   "author_name": "Your Name",
   "email": "Your Email",
