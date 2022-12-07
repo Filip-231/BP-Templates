@@ -1,8 +1,5 @@
 {
-  "_copy_without_render": [
-    "*docs/source/templates",
-    ".github/workflows"
-  ],
+  "_copy_without_render": ["*docs/source/templates", ".github/workflows"],
   "project_name": "Title of the project",
   "repo_name": "structure",
   "api_name": "django_api",
