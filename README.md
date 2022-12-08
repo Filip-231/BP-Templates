@@ -1,5 +1,5 @@
 # BP-Templates
-This repository contains all templates and initial repository with makefiles.
+This repository contains all templates and initial sub-repository with makefiles.
 
 ### Init:
 Repository containing necessary **makefiles** for project managment.
