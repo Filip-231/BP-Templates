@@ -1,4 +1,5 @@
 {
+  "_copy_without_render": ["docs/source/templates", ".github/workflows"],
   "package_name": "Package",
   "repo_name": "BP-Test-Package",
   "author_name": "Your Name",
