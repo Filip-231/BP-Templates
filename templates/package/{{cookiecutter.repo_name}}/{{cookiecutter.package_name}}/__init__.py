@@ -1,1 +1,1 @@
-"""Shared utils."""
+"""Define the CLI interface."""
