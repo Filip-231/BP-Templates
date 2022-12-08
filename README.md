@@ -12,5 +12,3 @@ which is deployed on multiple environments.
 * [Package](https://github.com/Filip-231/BP-Test-Package): can be used to create lightweight cli tool which can be shared between multiply apps.
 
 More information and complete journey can be found in [BP-Microservices](https://github.com/Filip-231/BP-Microservices) repository.
-
-
